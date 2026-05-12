@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>社内申請メニュー｜森信建設</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --brand:       #2a9090;
+    --brand-dark:  #1e6e6e;
+    --brand-light: #e0f4f4;
+    --amber:       #c07a10;
+    --amber-light: #fdf0db;
+    --blue:        #2060a0;
+    --blue-light:  #e4eef8;
+    --purple:      #5848b0;
+    --purple-light:#eeedf8;
+    --coral:       #b04030;
+    --coral-light: #faeae8;
+    --bg:          #f0f4f4;
+    --card:        #ffffff;
+    --text:        #1a1a1a;
+    --text-sub:    #666;
+    --border:      rgba(0,0,0,0.08);
+    --radius:      14px;
+    --radius-sm:   9px;
+  }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ヘッダー */
+  .header {
+    background: var(--brand);
+    padding: 28px 20px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 160px; height: 160px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; left: -20px;
+    width: 100px; height: 100px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+  .header-company {
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .header-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.5px;
+    position: relative;
+  }
+  .header-sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 10px;
+    position: relative;
+  }
+
+  /* コンテンツ */
+  .content {
+    padding: 20px 16px 40px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* セクション */
+  .section { margin-bottom: 28px; }
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--brand-dark);
+    letter-spacing: 1.5px;
+    padding: 0 4px 10px;
+    border-bottom: 1.5px solid var(--brand-light);
+    margin-bottom: 12px;
+  }
+
+  /* カードリスト */
+  .card-list {
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 0.5px solid var(--border);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+
+  /* 各メニュー項目 */
+  .menu-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 16px;
+    border-bottom: 0.5px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+    gap: 14px;
+    transition: background 0.15s;
+    -webkit-tap-highlight-color: rgba(0,0,0,0.04);
+  }
+  .menu-item:last-child { border-bottom: none; }
+  .menu-item:active { background: #f5f5f5; }
+
+  .menu-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .menu-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .ic-teal   { background: var(--brand-light);  color: var(--brand); }
+  .ic-amber  { background: var(--amber-light);  color: var(--amber); }
+  .ic-blue   { background: var(--blue-light);   color: var(--blue); }
+  .ic-purple { background: var(--purple-light); color: var(--purple); }
+  .ic-coral  { background: var(--coral-light);  color: var(--coral); }
+
+  .menu-text { flex: 1; min-width: 0; }
+  .menu-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 3px;
+  }
+  .menu-desc {
+    font-size: 12px;
+    color: var(--text-sub);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .menu-arrow {
+    color: #ccc;
+    flex-shrink: 0;
+  }
+  .menu-arrow svg { width: 18px; height: 18px; }
+
+  /* フッター */
+  .footer {
+    text-align: center;
+    font-size: 10px;
+    color: #aaa;
+    padding: 8px 0 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <p class="header-company">MORINOBU CONSTRUCTION</p>
+  <h1 class="header-title">社内申請メニュー</h1>
+  <p class="header-sub">申請したい項目をタップしてください</p>
+</div>
+
+<div class="content">
+
+  <!-- 1. 休暇・勤怠 -->
+  <div class="section">
+    <p class="section-label">休暇・勤怠</p>
+    <div class="card-list">
+
+      <a class="menu-item" href="YOUR_FORM_URL_1" target="_blank">
+        <div class="menu-icon ic-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="9" y1="15" x2="15" y2="15"/>
+          </svg>
+        </div>
+        <div class="menu-text">
+          <p class="menu-name">休暇・遅刻・外出申請</p>
+          <p class="menu-desc">有給・半休・遅刻・早退・外出の連絡</p>
+        </div>
+        <span class="menu-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+
+      <a class="menu-item" href="YOUR_FORM_URL_2" target="_blank">
+        <div class="menu-icon ic-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="12" y1="15" x2="12" y2="15" stroke-width="3"/><line x1="12" y1="18" x2="12" y2="18" stroke-width="3"/>
+          </svg>
+        </div>
+        <div class="menu-text">
+          <p class="menu-name">代休届</p>
+          <p class="menu-desc">休日出勤に対する代休の取得申請</p>
+        </div>
+        <span class="menu-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+
+      <a class="menu-item" href="YOUR_FORM_URL_3" target="_blank">
+        <div class="menu-icon ic-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/><line x1="18" y1="6" x2="22" y2="6"/><line x1="20" y1="4" x2="20" y2="8"/>
+          </svg>
+        </div>
+        <div class="menu-text">
+          <p class="menu-name">打刻修正申請</p>
+          <p class="menu-desc">出勤・退勤の漏れや時刻ミスの修正</p>
+        </div>
+        <span class="menu-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- 2. 経費・お金 -->
+  <div class="section">
+    <p class="section-label">経費・お金</p>
+    <div class="card-list">
+
+      <a class="menu-item" href="YOUR_FORM_URL_4" target="_blank">
+        <div class="menu-icon ic-amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/>
+          </svg>
+        </div>
+        <div class="menu-text">
+          <p class="menu-name">仮払い申請</p>
+          <p class="menu-desc">事前の現金受取申請</p>
+        </div>
+        <span class="menu-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+
+      <a class="menu-item" href="YOUR_FORM_URL_5" target="_blank">
+        <div class="menu-icon ic-amber">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="12" y2="17"/>
+          </svg>
+        </div>
+        <div class="menu-text">
+          <p class="menu-name">経費精算</p>
+          <p class="menu-desc">レシート・領収書の提出による精算</p>
+        </div>
+        <span class="menu-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- 3. 物品・備品 -->
+  <div class="section">
+    <p class="section-label">物品・備品</p>
+    <div class="card-list">
+
+      <a class="menu-item" href="YOUR_FORM_URL_6" target="_blank">
+        <div class="menu-icon ic-blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+        </div>
+        <div class="menu-text">
+          <p class="menu-name">購入申請</p>
+          <p class="menu-desc">作業服・備品等の購入依頼</p>
+        </div>
+        <span class="menu-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- 4. 設備予約 -->
+  <div class="section">
+    <p class="section-label">設備予約</p>
+    <div class="card-list">
+
+      <a class="menu-item" href="YOUR_FORM_URL_7" target="_blank">
+        <div class="menu-icon ic-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </div>
+        <div class="menu-text">
+          <p class="menu-name">社用車・設備予約</p>
+          <p class="menu-desc">軽トラ・スクラム等の予約＋社内アナウンス</p>
+        </div>
+        <span class="menu-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- 5. 経理・その他 -->
+  <div class="section">
+    <p class="section-label">経理・その他</p>
+    <div class="card-list">
+
+      <a class="menu-item" href="YOUR_FORM_URL_8" target="_blank">
+        <div class="menu-icon ic-coral">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/>
+          </svg>
+        </div>
+        <div class="menu-text">
+          <p class="menu-name">請求書イレギュラー連絡</p>
+          <p class="menu-desc">宛名変更・分割・振込先指定など</p>
+        </div>
+        <span class="menu-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+
+      <a class="menu-item" href="YOUR_FORM_URL_9" target="_blank">
+        <div class="menu-icon ic-coral">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div class="menu-text">
+          <p class="menu-name">応援申請</p>
+          <p class="menu-desc">現場の人員不足を社長・専務に打診</p>
+        </div>
+        <span class="menu-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+      </a>
+
+    </div>
+  </div>
+
+  <p class="footer">森信建設株式会社</p>
+
+</div>
+</body>
+</html>
